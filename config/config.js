@@ -10,8 +10,19 @@ export default {
     component:'../layout',
     routes: [
       {
-        path:'helloworld',
-        component: './HelloWorld'
+        path:'/',
+        component: 'HelloWorld'
+      },{
+        path:'/helloworld',
+        component: 'HelloWorld'
+      },{
+        path:'/Home',
+        routes: [
+          {
+            path:'/home/index',
+            component:'Home/Index'
+          }
+        ]
       }
     ]
   }]

@@ -12,9 +12,27 @@ let routes = [
     "component": require('../../layout').default,
     "routes": [
       {
+        "path": "/",
+        "component": require('../HelloWorld').default,
+        "exact": true
+      },
+      {
         "path": "/helloworld",
         "component": require('../HelloWorld').default,
         "exact": true
+      },
+      {
+        "path": "/Home",
+        "routes": [
+          {
+            "path": "/home/index",
+            "component": require('../Home/Index').default,
+            "exact": true
+          },
+          {
+            "component": () => React.createElement(require('C:/Users/Justmydream/Desktop/github/react-admin/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })
+          }
+        ]
       },
       {
         "component": () => React.createElement(require('C:/Users/Justmydream/Desktop/github/react-admin/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/page', hasRoutesInConfig: true })

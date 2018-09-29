@@ -14,6 +14,7 @@ import purple from '@material-ui/core/colors/purple'
 import { Search } from '@material-ui/icons'
 import Link from 'umi/link'
 import styles from './index.less'
+import AvatarImg from '../assets/avatar.jpg'
 
 const { Header, Footer, Sider, Content } = Layout
 
@@ -51,9 +52,7 @@ class BasicLayout extends Component {
                 key="sub1"
                 title={<span><Icon type="dashboard" /><span>Dashboard</span></span>}
               >
-                  <Menu.Item key="2"><Link to="/dashboard/analysis">分析页</Link></Menu.Item>
-                  <Menu.Item key="3"><Link to="/dashboard/monitor">监控页</Link></Menu.Item>
-                  <Menu.Item key="4"><Link to="/dashboard/workplace">工作台</Link></Menu.Item>
+                  <Menu.Item key="2"><Link to="/Home/Index">首页</Link></Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -63,13 +62,13 @@ class BasicLayout extends Component {
             <Header className={styles.headerStyle}>
               <AppBar color="primary" position="static" className={styles.barStyle}>
                 <Toolbar>
-                  <Grid container spacing={24}>
-                    <Grid xs={3} >
+                  <Grid container>
+                    <Grid item xs={4} >
                       <Typography className={styles.fontStyle} variant="title" color="inherit" noWrap>
                         React demos
                       </Typography>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid container item={true} xs={8} direction="row" justify="flex-end">
                       <div className={styles.search}>
                         <div>
                           <Search className={styles.searchIcon}/>
@@ -80,10 +79,8 @@ class BasicLayout extends Component {
                            className="inputChange"
                            />
                       </div>
-                    </Grid>
-                    <Grid item={true} xs={5} direction="row" justify="flex-end">
                       <div className={styles.search}>
-                        <Avatar alt="avatar" src="../assets/avatar.jpg" className={styles.avatar} />
+                        <Avatar alt="avatar" src={AvatarImg} className={styles.avatar} />
                       </div>
                     </Grid>
                   </Grid>
